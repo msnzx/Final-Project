@@ -1,4 +1,4 @@
-// Fun Facts Carousel
+// Fun Facts 
 var typed = new Typed(".text",{
     strings:[" Web Developer"," Software Developer"," Data Analyst"," Sports Enthusiast"],
     typeSpeed:100,
@@ -8,9 +8,10 @@ var typed = new Typed(".text",{
 })
 const facts = [
     "I'm fluent in 5 languages!",
+    "I love BMW & Mercedes",
     "I am passionate about about tech, investments, cars, motorcycles and MMA.",
     "I was the re-founder of the Muslim Student Association at Caldwell University.",
-    "I achieved a 3.90 GPA while balancing work and leadership roles.",
+    "I was born in Pakistan, raised in Saudi Arabia, and came to USA for my college",
     "I have worked at various departments across campus, including: Campus Safety, Admissions, International Admissions, Student Engagement and Facilities "
 ];
 
@@ -56,34 +57,6 @@ toggleButton.addEventListener("click", function () {
         localStorage.setItem('theme', 'light')
     }
     
-
-
-    // if (document.body.classList.contains("light-theme")) {
-    //     document.body.style.backgroundColor = "#ffffff";
-    //     document.body.style.color = "#000000";
-    //     document.header.style.backgroundColor = "#ffffff";
-    //     document.header.style.color = "#000000";
-
-    //     // Update all text elements to have black color
-    //     document.querySelectorAll("*").forEach((element) => {
-    //         if (window.getComputedStyle(element).color) {
-    //             element.style.color = "#000000";
-    //         }
-    //     });
-    // } else {
-    //     document.body.style.backgroundColor = "#121212";
-    //     document.body.style.color = "#ffffff";
-    //     toggleButton.style.backgroundColor = "#00bcd4";
-    //     toggleButton.style.color = "#ffffff";
-
-    //     // Revert all text elements to white color
-    //     document.querySelectorAll("*").forEach((element) => {
-    //         if (window.getComputedStyle(element).color) {
-    //             element.style.color = "#ffffff";
-    //         }
-    //     });
-    // }
-
 
 });
 
