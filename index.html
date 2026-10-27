@@ -211,12 +211,14 @@
                 <a class="media" href="https://www.facebook.com/muhammad.binaamir.75/" target="_blank" title="Facebook"><i class='bx bxl-facebook-circle'></i></a>
             </div>
             <div class="ocontact">
-            <form id="contact-form">
-                <input required type="text" id="yname" class="ocontact" placeholder="Full Name">
-                <input required type="email" id="email" class="ocontact" placeholder="Email">
-                <input required type="text" id="subject" class="ocontact" placeholder="Subject:">
-                <textarea required id="message" class="ocontact" placeholder="Message:"></textarea>
+            <form id="contact-form" action="https://formspree.io/f/mwllojyn" method="POST">
+                <input required type="text" id="yname" name="name" class="ocontact" placeholder="Full Name">
+                <input required type="email" id="email" name="email" class="ocontact" placeholder="Email">
+                <input required type="text" id="subject" name="_subject" class="ocontact" placeholder="Subject:">
+                <textarea required id="message" name="message" class="ocontact" placeholder="Message:"></textarea>
+                <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none">
                 <input type="submit" id="submit" value="Send">
+                <p id="form-status" role="status"></p>
             </form>
             </div>
         </div>

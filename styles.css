@@ -355,6 +355,11 @@ textarea {
     background-color: #2ecc71;
 }
 
+#form-status {
+    min-height: 1.5em;
+    margin-top: 10px;
+}
+
 /* Footer */
 footer {
     text-align: center;

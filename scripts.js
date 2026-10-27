@@ -44,13 +44,32 @@ toggleButton.addEventListener("click", function () {
     localStorage.setItem("theme", isLight ? "light" : "dark");
 });
 
-// Contact form: open the visitor's mail client with the message filled in
-document.getElementById("contact-form").addEventListener("submit", function (e) {
+// Contact form: send through Formspree without leaving the page
+const contactForm = document.getElementById("contact-form");
+const formStatus = document.getElementById("form-status");
+const submitBtn = document.getElementById("submit");
+
+contactForm.addEventListener("submit", async function (e) {
     e.preventDefault();
-    const name = document.getElementById("yname").value;
-    const email = document.getElementById("email").value;
-    const subject = document.getElementById("subject").value;
-    const message = document.getElementById("message").value;
-    const body = `${message}\n\n${name} (${email})`;
-    window.location.href = `mailto:mbinaamir@caldwell.edu?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    submitBtn.disabled = true;
+    formStatus.textContent = "Sending...";
+    try {
+        const response = await fetch(contactForm.action, {
+            method: "POST",
+            body: new FormData(contactForm),
+            headers: { Accept: "application/json" }
+        });
+        if (response.ok) {
+            formStatus.textContent = "Thanks! Your message was sent.";
+            contactForm.reset();
+        } else {
+            const data = await response.json().catch(() => ({}));
+            formStatus.textContent = data.errors
+                ? data.errors.map(err => err.message).join(", ")
+                : "Something went wrong. Please email me directly.";
+        }
+    } catch (err) {
+        formStatus.textContent = "Network error. Please email me directly.";
+    }
+    submitBtn.disabled = false;
 });
