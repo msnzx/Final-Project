@@ -221,7 +221,7 @@ li {
     margin: 0 auto;
 }
 
-#etitle, #edutitle {
+#etitle, #edutitle, #traintitle {
     font-size: 2.5em;
     color: rgb(108, 180, 75);
     text-align: center;
